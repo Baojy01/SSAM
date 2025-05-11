@@ -13,10 +13,6 @@ RDD-CHN: https://pan.baidu.com/s/1KkPMNMoi3gEMue0r6eG3nQ 提取码: p8xq
 DC-4K: https://pan.baidu.com/s/14pZMgo5vCfCfH-R_HLcdpw 提取码: mvam 
 
 
-<!-- 这是被注释掉的内容，它不会在 Markdown 渲染中显示 -->
-# 这是一个标题
-这是正文内容。
-
 - **Reference:**
 
 If you use these datasets for your research, please cite our paper:
