@@ -10,7 +10,7 @@ if __name__ == '__main__':
 
     for i in range(4):
         arch = archs[i]
-        dir_path = os.path.join('runs/GC10', dir_paths[i])
+        dir_path = os.path.join('runs/neu', dir_paths[i])
 
     model = YOLO('yolo11_efficientformerv2.yaml', task='detect')  # yolo11_mobilenetv2.yaml
     model.train(data="./mydata/neu_det.yaml",
@@ -29,5 +29,5 @@ if __name__ == '__main__':
                 seed=42,
                 lr0=1e-3,
                 cos_lr=True,
-                weight_decay=1e-2,
+                weight_decay=1e-4,
                 )
