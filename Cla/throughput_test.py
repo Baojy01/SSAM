@@ -93,17 +93,16 @@ for device in ['cpu', 'cuda:0']:
         compute_throughput = compute_throughput_cuda
 
     for n, batch_size0, resolution in [
+        ('mobilenet_v2_075', 256, 224),
         ('mobilenet_v2_10', 256, 224),
+        ('mobilenet_v2_14', 256, 224),
         ('mobilenet_v2_20', 256, 224),
-        ('mobilenet_v2_25', 256, 224),
         ('efficientformerv2_s0', 256, 224),
         ('efficientformerv2_s1', 256, 224),
         ('efficientformerv2_s2', 256, 224),
         ('fasternet_t0', 256, 224),
         ('fasternet_t1', 256, 224),
         ('fasternet_t2', 256, 224),
-        ('pvt_v2_b0', 256, 224),
-        ('pvt_v2_b1', 256, 224),
         ('EfficientViT_M0', 256, 224),
         ('EfficientViT_M1', 256, 224),
         ('EfficientViT_M2', 256, 224),
@@ -122,6 +121,7 @@ for device in ['cpu', 'cuda:0']:
         ('SSAMNet_Tiny', 256, 224),
         ('SSAMNet_Small', 256, 224),
         ('SSAMNet_Base', 256, 224),
+        ('SSAMNet_Large', 256, 224),
     ]:
 
         if device == 'cpu':
