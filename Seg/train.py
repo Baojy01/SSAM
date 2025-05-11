@@ -135,10 +135,6 @@ def create_model(backbone, num_classes):
 
 
 def get_loss(num_classes=2):
-    if args.dataset == 'DC-4K':
-        criterion = LOSS(num_classes, loss_type='bce', use_dice=True)
-        # criterion = BCE_Soft_clDice()
-    else:
         criterion = LOSS(num_classes, loss_type='bce')
     return criterion
 
