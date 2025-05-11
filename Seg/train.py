@@ -241,9 +241,8 @@ def main():
 
 
 if __name__ == '__main__':
-    
-    MODs = ['MobileNet_V2_075', 'MobileNet_V2_10', 'MobileNet_V2_14', 'MobileNet_V2_20']
-    for mod in MODs:
+          
+    for mod in MODELS:
         args.backbone = mod
         print(args.backbone)
         main()
