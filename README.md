@@ -14,17 +14,15 @@ DC-4K: https://pan.baidu.com/s/14pZMgo5vCfCfH-R_HLcdpw 提取码: mvam
 
  - **Reference:**
 
-If you use this dataset for your research, please cite our paper:
-
+If you use these datasets for your research, please cite our paper:
 
 ```
-@article{liu2019deepcrack,
-  title={DeepCrack: A Deep Hierarchical Feature Learning Architecture for Crack Segmentation},
-  author={Liu, Yahui and Yao, Jian and Lu, Xiaohu and Xie, Renping and Li, Li},
+@article{ssam,
+  title={$S^2$-AMNet: A Lightweight Spatial-Spectral Adaptive Modulation Network for Surface Defect Detection},
+  author={Jiayong Bao, Chunxia Zhang, Lili Bao and Jiangshe Zhang},
   journal={Neurocomputing},
   volume={338},
   pages={139--153},
-  year={2019},
-  doi={10.1016/j.neucom.2019.01.036}
+  year={2019}
 }
 ```
