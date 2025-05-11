@@ -4,7 +4,7 @@ from ptflops import get_model_complexity_info
 from models import *
 from utils import load_model
 
-models = ['MobileNet_V2_10', 'MobileNet_V2_20', 'MobileNet_V2_25',
+models = ['MobileNet_V2_075','MobileNet_V2_10', 'MobileNet_V2_14', 'MobileNet_V2_20',
           'EfficientFormerV2_S0', 'EfficientFormerV2_S1', 'EfficientFormerV2_S2',
           'FasterNet_T0', 'FasterNet_T1', 'FasterNet_T2',
           'PVT_v2_B0', 'PVT_v2_B1',
