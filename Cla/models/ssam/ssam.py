@@ -198,7 +198,7 @@ class AFMM(nn.Module):
 
 class SSAM(nn.Module):
     # Spatial-Spectral Adaptive Modulation (SSAM)
-    def __init__(self, dim, drop_path=0., layer_scale_init_value=None, norm_type='LN', post_norm=False):
+    def __init__(self, dim, drop_path=0., layer_scale_init_value=None, norm_type='LN'):
         super(SSAM, self).__init__()
 
         self.samm = SAMM(dim)
@@ -215,24 +215,15 @@ class SSAM(nn.Module):
             self.layer_scale = False
 
         self.drop_path = DropPath(drop_path) if drop_path > 0. else nn.Identity()
-        self.post_norm = post_norm
 
     def forward(self, x):
 
         if self.layer_scale:
-            if self.post_norm:
-                x = x + self.drop_path(self.gamma1 * self.norm1(self.samm(x)))
-                x = x + self.drop_path(self.gamma2 * self.norm2(self.afmm(x)))
-            else:
-                x = x + self.drop_path(self.gamma1 * self.samm(self.norm1(x)))
-                x = x + self.drop_path(self.gamma2 * self.afmm(self.norm2(x)))
+            x = x + self.drop_path(self.gamma1 * self.samm(self.norm1(x)))
+            x = x + self.drop_path(self.gamma2 * self.afmm(self.norm2(x)))
         else:
-            if self.post_norm:
-                x = x + self.drop_path(self.norm1(self.samm(x)))
-                x = x + self.drop_path(self.norm2(self.afmm(x)))
-            else:
-                x = x + self.drop_path(self.samm(self.norm1(x)))
-                x = x + self.drop_path(self.afmm(self.norm2(x)))
+            x = x + self.drop_path(self.samm(self.norm1(x)))
+            x = x + self.drop_path(self.afmm(self.norm2(x)))
 
         return x
 
