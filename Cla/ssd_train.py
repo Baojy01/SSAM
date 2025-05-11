@@ -13,7 +13,7 @@ from torch.utils.data import DataLoader
 from utils import GetData, train_runner, val_runner, dataset_path_cla, load_model
 
 
-models = ['MobileNet_V2_10', 'MobileNet_V2_20', ' MobileNet_V2_25',
+models = ['MobileNet_V2_075','MobileNet_V2_10', 'MobileNet_V2_14', ' MobileNet_V2_20',
           'EfficientFormerV2_S0', 'EfficientFormerV2_S1', 'EfficientFormerV2_S2',
           'FasterNet_t0', 'FasterNet_t1', 'FasterNet_t2',
           'EdgeViT_XXS', 'EdgeViT_XS', 'EdgeViT_S',
