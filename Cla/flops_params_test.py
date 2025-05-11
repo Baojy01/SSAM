@@ -7,9 +7,8 @@ from utils import load_model
 models = ['MobileNet_V2_075','MobileNet_V2_10', 'MobileNet_V2_14', 'MobileNet_V2_20',
           'EfficientFormerV2_S0', 'EfficientFormerV2_S1', 'EfficientFormerV2_S2',
           'FasterNet_T0', 'FasterNet_T1', 'FasterNet_T2',
-          'PVT_v2_B0', 'PVT_v2_B1',
           'EfficientViT_M0', 'EfficientViT_M1', 'EfficientViT_M2',
-          'EfficientViT_M3', 'EfficientViT_M4', 'EfficientViT_M5'
+          'EfficientViT_M3', 'EfficientViT_M4', 'EfficientViT_M5',
           'EdgeViT_XXS', 'EdgeViT_XS', 'EdgeViT_S',
           'EdgeNext_XXS', 'EdgeNext_XS', 'EdgeNext_S',
           'MobileViT_XXS', 'MobileViT_XS', 'MobileViT_S',
