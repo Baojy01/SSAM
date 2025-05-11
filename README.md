@@ -4,5 +4,5 @@ This is the Pytorch implementation of **$S^2$-AMNet: A Lightweight Spatial-Spect
 
 - **Datasets:**
 
-We construct three large scale defect datasets SSD-10, RDD-CHN and DC-4K, they are available soon.
+We constructed three large scale defect datasets SSD-10, RDD-CHN and DC-4K, they are available soon.
 
