@@ -19,7 +19,7 @@ models = ['MobileNet_V2_10', 'MobileNet_V2_20', ' MobileNet_V2_25',
           'EdgeViT_XXS', 'EdgeViT_XS', 'EdgeViT_S',
           'EdgeNext_XXS', 'EdgeNext_XS', 'EdgeNext_S',
           'MobileViT_XXS', 'MobileViT_XS', 'MobileViT_S',
-          'SSAMNet_Tiny', 'SSAMNet_Small', 'SSAMNet_Base']
+          'SSAMNet_Tiny', 'SSAMNet_Small', 'SSAMNet_Base', 'SSAMNet_Large']
 
 parser = argparse.ArgumentParser(description='PyTorch image training')
 parser.add_argument('--seed', default=42, type=int, help='seed for initializing training')
