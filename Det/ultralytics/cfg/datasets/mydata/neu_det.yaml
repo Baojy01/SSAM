@@ -1,0 +1,8 @@
+train: ./NEU-DET/images/train
+val: ./NEU-DET/images/val
+
+# number of classes
+nc: 6
+
+# class names
+names: ['crazing','inclusion', 'patch', 'pitted-surface', 'rolled-in', 'scratch']

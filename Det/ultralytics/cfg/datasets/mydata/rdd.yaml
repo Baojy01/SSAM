@@ -1,0 +1,8 @@
+train: ./RDD-CHN/images/train
+val: ./RDD-CHN/images/val
+
+# number of classes
+nc: 5
+
+# class names
+names: ["D00", "D10", "D20", "D40", "Repair"]
