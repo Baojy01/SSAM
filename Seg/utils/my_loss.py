@@ -1,7 +1,6 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from .cldice import Soft_clDice
 
 
 def ce_loss(inputs, target, loss_weight=None, ignore_index: int = 255):
@@ -53,17 +52,12 @@ def criterion(inputs, target, num_chasses=2, flag: str = 'ce', use_dice=False):
 
 
 class LOSS(nn.Module):
-    def __init__(self, num_classes=2, loss_type='ce', use_dice=False,use_aux=False):
+    def __init__(self, num_classes=2, loss_type='ce', use_dice=False):
         super().__init__()
         self.num_classes = num_classes
         self.type = loss_type
         self.use_dice = use_dice
-        self.use_aux = use_aux
-        self.cl_dice = Soft_clDice()
 
     def forward(self, img, label):
         loss = criterion(img, label, self.num_classes, self.type, self.use_dice)
-        if self.use_aux:
-            loss = loss + 0.5 * self.cl_dice(img, label)
-            
         return loss
