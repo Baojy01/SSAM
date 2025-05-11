@@ -131,6 +131,9 @@ def main():
     else:
         trainF = open(results_dir + 'train.csv', 'w')
         valF = open(results_dir + 'val.csv', 'w')
+        trainF.write('{},{}\n'.format('epoch', 'loss', 'top1', 'top5', 'lr'))
+        valF.write('{},{},{},{},{},{}\n'.format('epoch', 'val_loss', 'val_top1', 'val_top5', 'best_top1', 'best_top5'))
+
 
     lrs = []
     for epoch in range(args.start_epoch, args.epochs):
