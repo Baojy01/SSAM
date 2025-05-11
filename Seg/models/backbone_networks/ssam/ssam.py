@@ -74,40 +74,6 @@ class MPConv(nn.Module):
         return out
 
 
-class MBlock(nn.Module):
-    def __init__(self, dim, expand_ratio=4, drop_path=0., norm_type='BN', act_type='GELU'):
-        super(MBlock, self).__init__()
-
-        hidden_dim = int(dim * expand_ratio)
-
-        if expand_ratio == 1:
-            self.conv = nn.Sequential(
-                nn.Conv2d(dim, dim, kernel_size=3, padding=1, groups=dim, bias=False),
-                norm_layer(dim, norm_type),
-                act_layer(act_type),
-                nn.Conv2d(dim, dim, kernel_size=1, bias=False),
-                norm_layer(dim, norm_type),
-            )
-        else:
-            self.conv = nn.Sequential(
-                nn.Conv2d(dim, hidden_dim, kernel_size=1, bias=False),
-                norm_layer(hidden_dim, norm_type),
-                act_layer(act_type),
-                nn.Conv2d(hidden_dim, hidden_dim, kernel_size=3, padding=1, groups=hidden_dim, bias=False),
-                norm_layer(hidden_dim, norm_type),
-                act_layer(act_type),
-                nn.Conv2d(hidden_dim, dim, kernel_size=1, bias=False),
-                norm_layer(dim, norm_type),
-            )
-        self.drop_path = DropPath(drop_path) if drop_path > 0. else nn.Identity()
-
-    def forward(self, x):
-
-        out = x + self.drop_path(self.conv(x))
-
-        return out
-
-
 class MPBlock(nn.Module):
     def __init__(self, dim, expand_ratio=4, drop_path=0., norm_type='BN', act_type='GELU'):
         super().__init__()
