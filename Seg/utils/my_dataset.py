@@ -2,8 +2,6 @@ import os
 from PIL import Image
 import cv2
 from torch.utils.data import Dataset
-from .utils import Input_strategy
-
 
 class NEULoad(Dataset):
     def __init__(self, root: str, train: bool, transforms=None):
@@ -20,12 +18,8 @@ class NEULoad(Dataset):
         self.roi_mask = [os.path.join(data_root, "masks", i) for i in mask_names]
 
     def __getitem__(self, idx):
-        # img = Image.open(self.img_list[idx]).convert('RGB')
-        img = cv2.imread(self.img_list[idx], cv2.IMREAD_GRAYSCALE)
-        img = Input_strategy(img, 'GICA')
-        img = Image.fromarray(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
-
-        mask = Image.open(self.roi_mask[idx])
+        img = Image.open(self.img_list[idx]).convert('RGB')
+        mask = Image.open(self.roi_mask[idx]).convert('L')
 
         if self.transforms is not None:
             img, mask = self.transforms(img, mask)
@@ -54,10 +48,8 @@ class DCLoad(Dataset):
 
         img = cv2.imread(self.img_list[idx], cv2.IMREAD_GRAYSCALE)
         mask = cv2.imread(self.roi_mask[idx], cv2.IMREAD_GRAYSCALE)
-
-        img = Input_strategy(img, 'GICA')
+        
         img = Image.fromarray(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
-
         mask = Image.fromarray(mask//255)
 
         if self.transforms is not None:
