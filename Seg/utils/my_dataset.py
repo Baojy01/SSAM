@@ -45,11 +45,9 @@ class DCLoad(Dataset):
         self.roi_mask = [os.path.join(data_root, "masks", i) for i in mask_names]
 
     def __getitem__(self, idx):
-
-        img = cv2.imread(self.img_list[idx], cv2.IMREAD_GRAYSCALE)
+        img = Image.open(self.img_list[idx]).convert('RGB')
         mask = cv2.imread(self.roi_mask[idx], cv2.IMREAD_GRAYSCALE)
         
-        img = Image.fromarray(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
         mask = Image.fromarray(mask//255)
 
         if self.transforms is not None:
