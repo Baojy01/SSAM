@@ -24,15 +24,13 @@ DeepCrack: https://pan.baidu.com/s/1Y1mZgq6LFsGkvWKiyokmYw 提取码: zjhf
 
 If you use these datasets for your research, please cite our paper:
 
-```
 @article{ssam,
-  title={S2-AMNet: A Lightweight Spatial-Spectral Adaptive Modulation Network for Surface Defect Detection},
+  title={$S^2$-AMNet: A Lightweight Spatial-Spectral Adaptive Modulation Network for Surface Defect Detection},
   author={Jiayong Bao, Chunxia Zhang, Lili Bao and Jiangshe Zhang},
   journal={Engineering Applications of Artificial Intelligence},
   volume={*},
   pages={*},
   year={2025}
 }
-```
 
 
